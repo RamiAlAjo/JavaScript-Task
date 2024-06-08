@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Exercise #5: Input check for minimmum number of charecter should be 6 and
+      password match in both input
+    </title>
+    <style>
+      * {
+        font-family: Arial, sans-serif;
+      }
+
+      .err {
+        color: red;
+        font-size: 0.7em;
+      }
+    </style>
+    <script>
+      /* TODO complete this part */
+    </script>
+  </head>
+  <body>
+    <form name="pw">
+      <table>
+        <tr>
+          <td>Password (min 6 characters):</td>
+          <td>
+            <input
+              type="password"
+              name="password1"
+              id="password1"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw1_check" class="err"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Repeat password:</td>
+          <td>
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw2_check" class="err"></div>
+          </td>
+        </tr>
+      </table>
+
+      <input type="submit" value="Submit" id="submitBtn" />
+    </form>
+
+    <script>
+      (function () {
+        window.onload = function () {
+          document.getElementById("submitBtn").style.display = "none";
+        };
+
+        var pw1 = document.getElementById("password1");
+        var pw2 = document.getElementById("password2");
+        var check1 = document.getElementById("pw1_check");
+        var check2 = document.getElementById("pw2_check");
+        var button = document.getElementById("submitBtn");
+
+        function checkie() {
+          if (pw1.value.length > 0) {
+            if (pw1.value.length < 6) {
+              check1.innerHTML = "Too short";
+              if (pw2.value.length > 0 && pw1.value !== pw2.value) {
+                check2.innerHTML = "Passwords don't match";
+                button.style.display = pw1.value === pw2.value ? "" : "none";
+              }
+            }
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

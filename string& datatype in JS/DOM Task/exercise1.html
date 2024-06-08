@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #help-box {
+        width: 180px;
+        height: 30px;
+        background: yellow;
+        border: 1px solid;
+        text-align: center;
+        line-height: 30px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="help-box"
+      onmouseenter="this.innerText = 'Hello World!'"
+      onmouseout="this.innerText = 'Can I help you?'"
+    >
+      Can I help you?
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #flag-image {
+        display: block;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <select name="flag" id="select-flag">
+      <option value="jordan">Jordan</option>
+      <option value="palestine">Palestine</option>
+      <option value="Syria">Syria</option>
+      <option value="Iraq">Iraq</option>
+    </select>
+    <img id="flag-image" src="./Flag_of_Jordan.png" alt="" />
+    <script>
+      let select = document.getElementById("select-flag");
+      let image = document.getElementById("flag-image");
+      select.addEventListener("change", (event) => {
+        if (event.target.value === "jordan") image.src = "./Flag_of_Jordan.png";
+        else if (event.target.value === "palestine")
+          image.src = "./Flag_of_palestine.png";
+        else if (event.target.value === "Syria")
+          image.src = "./Flag_of_Syria.png";
+        else if (event.target.value === "Iraq") image.src = "./flag-Iraq.webp";
+      });
+    </script>
+  </body>
+</html>
